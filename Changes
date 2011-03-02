@@ -1,4 +1,8 @@
 Revision history for Acme-CPANAuthors-Search
 
+0.02    Wed Mar 02 10:48:15 2011
+        - Removed "-T" from the first line of 00-load.t, pod.t and manifest.t.
+          It appears to me that Mac OS X doesn't like it, for some reason.
+
 0.01    Tue Mar 01 16:45:18 2011
         - First version released.

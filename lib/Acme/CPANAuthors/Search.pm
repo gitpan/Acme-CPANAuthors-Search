@@ -8,11 +8,11 @@ Acme::CPANAuthors::Search - A very simple module for searching CPAN module autho
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 our $DEBUG   = 0;
 
 use Carp;
@@ -53,8 +53,8 @@ sub new
 =head2 by_id
 
 This method accepts CPAN ID exactly as provided by CPAN. It does realtime search on CPAN site and fetch
-the author name for the give CPAN ID. However it would return nothing if it can't access the CPAN site
-or unable to get any response for the give CPAN ID.
+the author name for the given CPAN ID. However it would return nothing if it can't access the CPAN site
+or unable to get any response for the given CPAN ID.
 
 =cut
 
