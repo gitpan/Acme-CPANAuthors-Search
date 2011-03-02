@@ -8,11 +8,11 @@ Acme::CPANAuthors::Search - A very simple module for searching CPAN module autho
 
 =head1 VERSION
 
-Version 0.02
+Version 0.03
 
 =cut
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 our $DEBUG   = 0;
 
 use Carp;

@@ -1,25 +1,24 @@
---- #YAML:1.0
-name:               Acme-CPANAuthors-Search
-version:            0.02
-abstract:           A very simple module for searching CPAN module authors.
+---
+abstract: 'A very simple module for searching CPAN module authors.'
 author:
-    - Mohammad S Anwar <mohammad.anwar@yahoo.com>
-license:            perl
-distribution_type:  module
-configure_requires:
-    ExtUtils::MakeMaker:  0
+  - 'Mohammad S Anwar <mohammad.anwar@yahoo.com>'
 build_requires:
-    ExtUtils::MakeMaker:  0
-requires:
-    HTML::Entities:  1.35
-    HTTP::Request:   1.40
-    LWP::UserAgent:  2.33
-    Test::More:      0
-no_index:
-    directory:
-        - t
-        - inc
-generated_by:       ExtUtils::MakeMaker version 6.56
+  HTML::Entities: 1.35
+  HTTP::Request: 1.40
+  LWP::UserAgent: 2.33
+  Test::More: 0
+configure_requires:
+  Module::Build: 0.36
+generated_by: 'Module::Build version 0.3607'
+license: perl
 meta-spec:
-    url:      http://module-build.sourceforge.net/META-spec-v1.4.html
-    version:  1.4
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Acme-CPANAuthors-Search
+provides:
+  Acme::CPANAuthors::Search:
+    file: lib/Acme/CPANAuthors/Search.pm
+    version: 0.03
+resources:
+  license: http://dev.perl.org/licenses/
+version: 0.03
