@@ -8,11 +8,11 @@ Acme::CPANAuthors::Search - A very simple module for searching CPAN module autho
 
 =head1 VERSION
 
-Version 0.03
+Version 0.04
 
 =cut
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 our $DEBUG   = 0;
 
 use Carp;
@@ -52,9 +52,9 @@ sub new
 
 =head2 by_id
 
-This method accepts CPAN ID exactly as provided by CPAN. It does realtime search on CPAN site and fetch
-the author name for the given CPAN ID. However it would return nothing if it can't access the CPAN site
-or unable to get any response for the given CPAN ID.
+This method accepts CPAN ID exactly as provided by CPAN. It does realtime search on CPAN site and  fetch
+the author name for the given CPAN ID. However it would croak if it can't access the CPAN site or unable 
+to get any response for the given CPAN ID.
 
 =cut
 
@@ -67,7 +67,8 @@ sub by_id
     my $request  = HTTP::Request->new(POST=>qq[http://search.cpan.org/search?query=$id&mode=author]);
     my $response = $browser->request($request);
     print {*STDOUT} "Search By Id [$id] Status: " . $response->status_line . "\n" if $DEBUG;
-    return unless $response->is_success;
+    croak("ERROR: Couldn't connect to search.cpan.org.\n") 
+        unless $response->is_success;
     
     my $contents = $response->content;
     my @contents = split(/\n/,$contents);
@@ -87,8 +88,9 @@ sub by_id
 
 =head2 where_id_starts_with
 
-This method accepts an alphabet (A-Z) and get the list of authors that start with the given
-alphabet from CPAN site realtime.
+This method accepts an alphabet (A-Z) and get the list of authors that start with the  given
+alphabet from CPAN site realtime. However it would croak if it can't access the CPAN site or 
+unable to get any response for the given CPAN ID.
 
 =cut
 
@@ -101,7 +103,8 @@ sub where_id_starts_with
     my $request  = HTTP::Request->new(POST=>qq[http://search.cpan.org/author/?$letter]);
     my $response = $browser->request($request);
     print {*STDOUT} "Search Id Starts With [$letter] Status: " . $response->status_line . "\n" if $DEBUG;
-    return unless $response->is_success;
+    croak("ERROR: Couldn't connect to search.cpan.org.\n") 
+        unless $response->is_success;
     
     my $contents = $response->content;
     my @contents = split(/\n/,$contents);
@@ -123,7 +126,8 @@ sub where_id_starts_with
 =head2 where_name_contains
 
 This method accepts a search string and look for the string in the author's name of all the CPAN modules
-realtime and returns the a reference to a hash containing id, name pair containing the search string.
+realtime and returns the a reference to a hash containing id, name pair containing the search string. It
+croaks if unable to access the search.cpan.org.
 
 =cut
 
@@ -136,7 +140,8 @@ sub where_name_contains
     my $request  = HTTP::Request->new(POST=>qq[http://search.cpan.org/search?query=$query&mode=author]);
     my $response = $browser->request($request);
     print {*STDOUT} "Search By Name Contains [$query] Status: " . $response->status_line . "\n" if $DEBUG;
-    return unless $response->is_success;
+    croak("ERROR: Couldn't connect to search.cpan.org.\n") 
+        unless $response->is_success;
     
     my $contents = $response->content;
     my @contents = split(/\n/,$contents);

@@ -1,5 +1,10 @@
 Revision history for Acme-CPANAuthors-Search
 
+0.04    Thu Mar 03 10:49:19 2011
+        - Updated method by_id(), where_id_starts_with() and where_name_contains() to croak if can't
+          access search.cpan.org.
+        - Modified the unit test 01-test-case.t to skip the test if there is no internet access.
+
 0.03    Wed Mar 02 12:04:21 2011
         - Upping the rev, so that correct tar ball can be uploaded to CPAN. The earlier version of
           tar ball created by make file had incorrect file permission.

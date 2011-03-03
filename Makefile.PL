@@ -12,9 +12,9 @@ WriteMakefile(
       ? ('LICENSE'=> 'perl')
       : ()),
     PREREQ_PM     => {
-        'Test::More'        => 0,
-        'HTTP::Request'     => '1.40',
-        'LWP::UserAgent'    => '2.33',
-        'HTML::Entities'    => '1.35',
+        'Test::More'     => 0,
+        'HTTP::Request'  => '1.40',
+        'LWP::UserAgent' => '2.33',
+        'HTML::Entities' => '1.35',
     },
 );
