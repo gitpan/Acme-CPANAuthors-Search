@@ -1,5 +1,8 @@
 Revision history for Acme-CPANAuthors-Search
 
+0.05    Mon Mar 07 12:49:10 2011
+        - Put up notice that this module has been renamed as CPAN::AuthorsSearch.
+
 0.04    Thu Mar 03 10:49:19 2011
         - Updated method by_id(), where_id_starts_with() and where_name_contains() to croak if can't
           access search.cpan.org.

@@ -2,17 +2,23 @@ package Acme::CPANAuthors::Search;
 
 use strict; use warnings;
 
+=head1 ***NOTICE***
+
+Just to inform all the perl community that no further development will be done in this module. This module has now been registered under the namespace CPAN::AuthorsSearch.
+However this will remain available for those who are still interested in this module. I would recommend to look for CPAN::AuthorsSearch for further enhancement to the features
+and bug fixes.
+
 =head1 NAME
 
-Acme::CPANAuthors::Search - A very simple module for searching CPAN module authors.
+Acme::CPANAuthors::Search - Interface to CPAN module author search.
 
 =head1 VERSION
 
-Version 0.04
+Version 0.05
 
 =cut
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 our $DEBUG   = 0;
 
 use Carp;
